@@ -104,10 +104,6 @@ app.post('/cadastroPlaca', [
     }
 });
 
-
-
-
-
 // Rota GET para gerar relatório em PDF por cidade
 app.get('/relatorio/cidade/:cidade', async (req, res) => {
     const { cidade } = req.params;
