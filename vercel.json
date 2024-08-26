@@ -19,8 +19,5 @@
       "src": "/relatorio/cidade/(.*)",
       "dest": "/server.js"
     }
-  ],
-  "static": {
-    "public": "public"
-  }
+  ]
 }
