@@ -26,14 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 
-
-
-
-
-
-
-
-
 // Modelo do MongoDB
 const Placa = mongoose.model('Placa', new mongoose.Schema({
     placa: { type: String, required: true },
