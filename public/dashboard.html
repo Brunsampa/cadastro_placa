@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Sistema de Placas</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Dashboard</h1>
+    <p>Bem-vindo ao Sistema de Placas! Utilize as funcionalidades abaixo.</p>
+
+     <!-- Cadastro de Placa -->
+     <div class="section">
+      <h2>Cadastrar Placa</h2>
+      <form id="cadastroPlacaForm">
+        <label for="foto">Foto da Placa:</label>
+        <input type="file" id="foto" name="foto" required>
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" required>
+
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="cadastroResponse" class="response"></div>
+    </div>
+
+    <!-- Consultar Placa -->
+    <div class="section">
+      <h2>Consultar Placa</h2>
+      <form id="consultaPlacaForm">
+        <label for="placa">Número da Placa:</label>
+        <input type="text" id="placa" name="placa" required>
+
+        <button type="submit">Consultar</button>
+      </form>
+      <div id="consultaResponse" class="response"></div>
+    </div>
+
+    <!-- Gerar Relatório por Cidade -->
+    <div class="section">
+      <h2>Gerar Relatório por Cidade</h2>
+      <form id="relatorioCidadeForm">
+        <label for="cidadeRelatorio">Cidade:</label>
+        <input type="text" id="cidadeRelatorio" name="cidadeRelatorio" required>
+
+        <button type="submit">Gerar Relatório</button>
+      </form>
+      <div id="relatorioResponse" class="response"></div>
+    </div>
+
+    <!-- Botão de Logout -->
+    <button id="logoutBtn">Logout</button>
+  </div>
+
+  <script>
+    // Verifica se o token está presente ao carregar o dashboard
+window.addEventListener('load', () => {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    // Redireciona para o login se o token não existir
+    window.location.href = '/login';
+  }
+});
+
+
+    // Função de logout
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('token');  // Remove o token armazenado
+      window.location.href = '/';  // Redireciona para a página de login
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
