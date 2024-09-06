@@ -2,7 +2,7 @@
   "name": "cadastro-placa",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "login.html",
   "scripts": {
     "start": "node server.js",
     "test": "mocha"
